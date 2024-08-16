@@ -34,7 +34,7 @@ h3 {
 }
 .per-img {
   border-radius: 50%;
-  width: 150px;
+  width: 20vh;
   height: 200px;
 }
 .parag {
@@ -90,38 +90,38 @@ a,#visit{
 }
 @media (max-width: 1200px) {
   .container {
-    padding-top: 100px !important; /* Adjust the value based on your design */
+    padding-top: 100px !important; 
   }
   .container2 {
-    padding-top: 100px !important; /* Adjust the value based on your design */
-    margin-top: 100px !important; /* Adjust the value based on your design */
-    margin-bottom: 50px !important; /* Adjust the value based on your design */
+    padding-top: 100px !important; 
+    margin-top: 100px !important; 
+    margin-bottom: 50px !important; 
   }
 
   .H1 {
-    padding-bottom: 40px; /* Adjust the value based on your design */
+    padding-bottom: 40px; 
   }
 
   .parag {
-    padding: 0; /* Remove or adjust the padding for smaller screens */
+    padding: 0; 
   }
 }
-/* Media query for screens between 1200px and 1450px */
+
 @media (min-width: 1200px) and (max-width: 1650px) {
   .container {
-    padding-top: 150px !important; /* Adjust the value based on your design */
+    padding-top: 150px !important; 
   }
   .container2 {
-    padding-top: 150px !important; /* Adjust the value based on your design */
+    padding-top: 150px !important; 
     margin-bottom: 200px !important; 
   }
 
   .H1 {
-    padding-bottom: 50px; /* Adjust the value based on your design */
+    padding-bottom: 50px; 
   }
 
   .parag {
-    padding: 0; /* Remove or adjust the padding for this range */
+    padding: 0; 
   }
 }
 @media (max-width: 992px) {
@@ -151,6 +151,9 @@ a,#visit{
 @media (max-width: 497px) {
   .mid {
     height: 1250px !important;
+  }
+  html,body{
+    width: 100% !important;
   }
 }
 @media (max-width: 417px) {
