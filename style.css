@@ -34,7 +34,7 @@ h3 {
 }
 .per-img {
   border-radius: 50%;
-  width: 20vh;
+  width: 150px !important;
   height: 200px;
 }
 .parag {
