@@ -15,7 +15,7 @@
 .container2 {
   padding-top: 50px !important ;
   height: 50vh;
-  width: 100vh !important;
+  width: 100vh ;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
@@ -120,6 +120,7 @@ a {
     padding-top: 100px !important;
     margin-top: 100px !important;
     margin-bottom: 50px !important;
+    width:10vh ;
   }
 
   .H1 {
