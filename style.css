@@ -1,7 +1,7 @@
 .H1 {
   font-family: "Caveat", cursive;
   font-family: "Indie Flower", cursive;
-  font-size: 60px !important;
+  font-size: 60px ;
   padding-bottom: 70px;
   color: aliceblue !important;
 }
@@ -168,7 +168,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: auto;
   }
 }
 @media (max-width: 497px) {
@@ -191,6 +191,12 @@ a {
 @media (max-width: 355px) {
   .mid {
     height: 1650px !important;
+  }
+  .H1{
+    font-size: 40px;
+  }
+  .low{
+    margin-top: 20em;
   }
 }
 
