@@ -74,7 +74,7 @@ button:hover {
 }
 .cont5 {
   padding-top: 40px !important;
-  height: 250px !important;
+  height: 15em;
 }
 .footer {
   background: linear-gradient(
@@ -169,6 +169,9 @@ a {
     justify-content: center;
     align-items: center;
     width: auto;
+  }
+  .cont5{
+    height:20em;
   }
 }
 @media (max-width: 497px) {
