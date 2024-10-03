@@ -117,7 +117,8 @@ button:hover {
     rgba(2, 0, 36, 1) 20%
   ) !important;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-  transform: scale(1.09);
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
 }
 .cont5 {
   padding-top: 40px !important;
