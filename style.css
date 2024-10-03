@@ -123,6 +123,9 @@ button:hover {
   padding-top: 40px !important;
   height: 15em;
 }
+.mb-override{
+   margin-bottom: 5rem !important;
+}
 .footer {
   background: var(--gradient-background) !important;
 }
@@ -149,6 +152,10 @@ a {
 .beforeLow{
   margin-bottom: 10rem;
   margin-top: 5rem;
+}
+#progress{
+  font-weight: 200;
+  font-size: 0.5em;
 }
 
 @media (max-width: 1200px) {
