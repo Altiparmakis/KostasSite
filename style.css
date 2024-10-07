@@ -93,6 +93,7 @@ h3 {
   width: 150px !important;
   height: 200px;
 }
+
 .parag {
   font-size: 20px;
   padding: 0px 600px;
@@ -231,6 +232,9 @@ a {
   html,
   body {
     width: 100% !important;
+  }
+  .low{
+    margin-top: 100em!important;
   }
 }
 @media (max-width: 417px) {
