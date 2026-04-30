@@ -7,7 +7,7 @@
   --text-primary: #1e293b;
   --text-secondary: #475569;
   --text-primary-dark: #f8fafc;
-  --text-secondary-dark: rgba(11, 12, 13, 0.82);
+  --text-secondary-dark: rgba(248, 250, 252, 0.82);
   --accent: #06b6d4;
   --shadow: rgba(0, 0, 0, 0.1);
   --border-radius: 8px;
@@ -78,9 +78,27 @@ body {
     color 0.3s ease;
 }
 
+strong,
+b {
+  font-weight: 700;
+}
+
 .dark-mode {
+  --bs-body-color: var(--text-primary-dark);
+  --bs-emphasis-color: var(--text-primary-dark);
+  --bs-emphasis-color-rgb: 248, 250, 252;
+  --bs-heading-color: var(--text-primary-dark);
   background-color: var(--text-primary);
-  color: var(--background-light);
+  color: var(--text-primary-dark);
+}
+
+.dark-mode :where(p, li, span) {
+  color: inherit;
+}
+
+body.dark-mode .text-body-emphasis,
+body.dark-mode h3.text-body-emphasis {
+  color: var(--text-primary-dark);
 }
 
 .H1 {
@@ -123,7 +141,7 @@ body {
   padding: calc(var(--spacing-unit) * 5) 0;
 }
 .second-section {
-  padding: calc(var(--spacing-unit) * 2) 0 calc(var(--spacing-unit) * 3);
+  padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
 }
 
 .sc-section {
