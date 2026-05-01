@@ -10,6 +10,10 @@
   --text-secondary-dark: rgba(248, 250, 252, 0.82);
   --accent: #06b6d4;
   --shadow: rgba(0, 0, 0, 0.1);
+  --button-gradient: linear-gradient(135deg, #1d4ed8 0%, #2563eb 52%, #06b6d4 100%);
+  --button-gradient-hover: linear-gradient(135deg, #1e40af 0%, #2563eb 42%, #22d3ee 100%);
+  --button-shadow: 0 12px 26px rgba(37, 99, 235, 0.28);
+  --button-shadow-hover: 0 18px 36px rgba(6, 182, 212, 0.34);
   --border-radius: 8px;
   --spacing-unit: 8px;
   --font-primary:
@@ -280,6 +284,7 @@ body.dark-mode h3.text-body-emphasis {
   height: 4rem;
   border-radius: var(--border-radius);
   background: var(--gradient-background);
+  color: var(--background-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -290,29 +295,63 @@ body.dark-mode h3.text-body-emphasis {
   transform: rotate(5deg);
 }
 .btn {
-  background: var(--primary-color);
   color: var(--background-light);
   border: none;
-  border-radius: var(--border-radius);
-  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
-  font-weight: 600;
+  border-radius: 999px;
+  padding: calc(var(--spacing-unit) * 1.45) calc(var(--spacing-unit) * 3.5);
+  font-weight: 700;
   font-family: var(--font-primary);
   font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px var(--shadow);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 46px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.btn:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+.portfolio-btn {
+  background: var(--button-gradient);
+  color: var(--background-light);
+  box-shadow: var(--button-shadow);
+  position: relative;
+  overflow: hidden;
 }
 
-.btn:active {
-  transform: translateY(0);
+.portfolio-btn:hover,
+.portfolio-btn:focus-visible {
+  background: var(--button-gradient-hover);
+  color: var(--background-light);
+  transform: translateY(-3px);
+  box-shadow: var(--button-shadow-hover);
+}
+
+.portfolio-btn:focus-visible {
+  outline: 3px solid rgba(6, 182, 212, 0.45);
+  outline-offset: 4px;
+}
+
+.portfolio-btn:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.24);
+}
+
+.dark-mode .portfolio-btn {
+  box-shadow: 0 12px 28px rgba(6, 182, 212, 0.22);
+}
+
+.dark-mode .portfolio-btn:hover,
+.dark-mode .portfolio-btn:focus-visible {
+  box-shadow: 0 18px 38px rgba(6, 182, 212, 0.28);
 }
 
 .btn a {
@@ -533,7 +572,8 @@ body.dark-mode h3.text-body-emphasis {
 
 .low {
   background: var(--background-light);
-  padding: calc(var(--spacing-unit) * 12) calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) * 5) calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 12);
+
 }
 
 .dark-mode .low {
@@ -574,17 +614,10 @@ body.dark-mode h3.text-body-emphasis {
 }
 
 .cta-button {
-  padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 5);
+  padding: calc(var(--spacing-unit) * 1.7) calc(var(--spacing-unit) * 4.5);
   font-size: 1.05rem;
-  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.cta-button:hover {
-  box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
-  transform: translateY(-3px);
+  letter-spacing: 0.04em;
 }
 
 .low h2 {
@@ -832,6 +865,7 @@ body.dark-mode h3.text-body-emphasis {
   .btn {
     padding: calc(var(--spacing-unit)) calc(var(--spacing-unit) * 2);
     font-size: 0.9rem;
+    min-height: 42px;
   }
 
   .low {
