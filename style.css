@@ -10,15 +10,19 @@
   --text-secondary-dark: rgba(248, 250, 252, 0.82);
   --accent: #06b6d4;
   --shadow: rgba(0, 0, 0, 0.1);
-  --button-gradient: linear-gradient(135deg, #1d4ed8 0%, #2563eb 52%, #06b6d4 100%);
-  --button-gradient-hover: linear-gradient(135deg, #1e40af 0%, #2563eb 42%, #22d3ee 100%);
-  --button-shadow: 0 12px 26px rgba(37, 99, 235, 0.28);
-  --button-shadow-hover: 0 18px 36px rgba(6, 182, 212, 0.34);
+  --button-primary: #4f46e5;
+  --button-primary-hover: #4338ca;
+  --button-secondary-bg: rgba(255, 255, 255, 0.92);
+  --button-secondary-border: rgba(79, 70, 229, 0.22);
+  --button-shadow: 0 10px 24px rgba(79, 70, 229, 0.18);
+  --button-shadow-hover: 0 14px 28px rgba(79, 70, 229, 0.22);
   --border-radius: 8px;
   --spacing-unit: 8px;
   --font-primary:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-secondary: "Inter", serif;
+    "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-secondary:
+    "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --hero-background: linear-gradient(135deg, #4c3f91 0%, #6d4aa8 100%);
 }
 .dark-mode-toggle {
   width: 100px;
@@ -74,7 +78,7 @@ body {
   font-family: var(--font-primary);
   color: var(--text-primary);
   background-color: var(--background-light);
-  line-height: 1.6;
+  line-height:1.6;
   margin: 0;
   padding: 0;
   transition:
@@ -107,10 +111,20 @@ body.dark-mode h3.text-body-emphasis {
 
 .H1 {
   font-family: var(--font-secondary);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
-  padding-bottom: calc(var(--spacing-unit) * 4);
-  color: var(--background-light);
+  line-height: 0.98;
+  padding-bottom: calc(var(--spacing-unit) * 5);
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.5rem, 2vw, 1.55rem);
+  font-weight: 500;
+  line-height: 1.45;
   margin: 0;
 }
 
@@ -125,10 +139,10 @@ body.dark-mode h3.text-body-emphasis {
 }
 
 .fr {
-  background: var(--gradient-background);
+  background: var(--hero-background);
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  box-shadow: 0 4px 20px var(--shadow);
+  box-shadow: 0 18px 44px rgba(76, 63, 145, 0.18);
 }
 
 .mid {
@@ -325,8 +339,9 @@ body.dark-mode h3.text-body-emphasis {
 }
 
 .portfolio-btn {
-  background: var(--button-gradient);
+  background: var(--button-primary);
   color: var(--background-light);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: var(--button-shadow);
   position: relative;
   overflow: hidden;
@@ -334,29 +349,31 @@ body.dark-mode h3.text-body-emphasis {
 
 .portfolio-btn:hover,
 .portfolio-btn:focus-visible {
-  background: var(--button-gradient-hover);
+  background: var(--button-primary-hover);
   color: var(--background-light);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: var(--button-shadow-hover);
 }
 
 .portfolio-btn:focus-visible {
-  outline: 3px solid rgba(6, 182, 212, 0.45);
+  outline: 3px solid rgba(79, 70, 229, 0.28);
   outline-offset: 4px;
 }
 
 .portfolio-btn:active {
-  transform: translateY(-1px) scale(0.99);
-  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.24);
+  transform: translateY(0) scale(0.99);
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.18);
 }
 
 .dark-mode .portfolio-btn {
-  box-shadow: 0 12px 28px rgba(6, 182, 212, 0.22);
+  background: var(--button-primary);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 
 .dark-mode .portfolio-btn:hover,
 .dark-mode .portfolio-btn:focus-visible {
-  box-shadow: 0 18px 38px rgba(6, 182, 212, 0.28);
+  background: var(--button-primary-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
 }
 
 .btn a {
@@ -380,7 +397,7 @@ body.dark-mode h3.text-body-emphasis {
   gap: calc(var(--spacing-unit) * 4);
   padding: calc(var(--spacing-unit) * 5);
   background:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(6, 182, 212, 0.08)),
+    linear-gradient(135deg, rgba(84, 92, 131, 0.1), rgba(57, 107, 127, 0.08)),
     var(--background-light);
   border: 1px solid rgba(30, 41, 59, 0.1);
   border-radius: var(--border-radius);
@@ -500,14 +517,25 @@ body.dark-mode h3.text-body-emphasis {
 }
 
 .courses-home-link {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition:
+    color 0.25s ease,
+    text-underline-offset 0.25s ease;
 }
 
 .courses-home-link:hover {
   color: var(--background-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.courses-home-link:focus-visible,
+.footer-nav-link:focus-visible,
+.social-link:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 4px;
 }
 
 .courses-page-title {
@@ -773,15 +801,20 @@ body.dark-mode h3.text-body-emphasis {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.95);
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
   cursor: pointer;
   text-decoration: none;
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px) scale(1.1);
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+  color: var(--background-light);
 }
 
 .social-link svg {
@@ -802,12 +835,15 @@ body.dark-mode h3.text-body-emphasis {
   font-weight: 600;
   text-decoration: none;
   transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+    color 0.25s ease,
+    text-underline-offset 0.25s ease,
+    transform 0.25s ease;
 }
 
 .footer-nav-link:hover {
-  color: var(--accent);
+  color: var(--background-light);
+  text-decoration: underline;
+  text-underline-offset: 4px;
   transform: translateY(-2px);
 }
 
@@ -940,7 +976,7 @@ body.dark-mode h3.text-body-emphasis {
 
 @media (max-width: 576px) {
   .H1 {
-    font-size: 2rem;
+    font-size: 2.35rem;
   }
 
   .per-img {
