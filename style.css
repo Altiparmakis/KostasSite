@@ -92,12 +92,30 @@ b {
 }
 
 .dark-mode {
-  --bs-body-color: var(--text-primary-dark);
-  --bs-emphasis-color: var(--text-primary-dark);
+  --bg: #0b0d12;
+  --bg-section: #10141c;
+  --bg-card: #171d27;
+  --bg-card-hover: #1c2330;
+  --text: #f3f4f6;
+  --text-muted: #a7b0c0;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #7c6cff;
+  --accent-hover: #9388ff;
+  --text-primary: var(--bg);
+  --text-secondary: var(--bg-card);
+  --text-primary-dark: var(--text);
+  --text-secondary-dark: var(--text-muted);
+  --button-primary: var(--accent);
+  --button-primary-hover: var(--accent-hover);
+  --button-shadow: 0 10px 26px rgba(124, 108, 255, 0.2);
+  --button-shadow-hover: 0 16px 34px rgba(124, 108, 255, 0.26);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  --bs-body-color: var(--text);
+  --bs-emphasis-color: var(--text);
   --bs-emphasis-color-rgb: 248, 250, 252;
-  --bs-heading-color: var(--text-primary-dark);
-  background-color: var(--text-primary);
-  color: var(--text-primary-dark);
+  --bs-heading-color: var(--text);
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .dark-mode :where(p, li, span) {
@@ -150,9 +168,6 @@ body.dark-mode h3.text-body-emphasis {
   /* background-color: var(--background-light); */
 }
 
-.dark-mode .mid {
-  background-color: var(--text-primary);
-}
 .container2 {
   max-width: 1200px;
   margin: 0 auto;
@@ -182,15 +197,26 @@ body.dark-mode h3.text-body-emphasis {
 
 
 
-.dark-mode .sc-section {
-  background-color: var(--text-secondary);
-}
-
 .container1 {
   max-width: 1220px;
   margin: 0 auto;
   display: grid;
   gap: calc(var(--spacing-unit) * 3);
+}
+
+.skills-grid {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(var(--spacing-unit) * 4);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.skills-grid > .feature {
+  width: 100%;
+  max-width: none;
 }
 
 .about-card {
@@ -261,6 +287,12 @@ body.dark-mode h3.text-body-emphasis {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
 
+@media (max-width: 991.98px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .about-card {
     grid-template-columns: 1fr;
@@ -277,6 +309,10 @@ body.dark-mode h3.text-body-emphasis {
 }
 
 @media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
   .about-card {
     gap: calc(var(--spacing-unit) * 2);
   }
@@ -365,17 +401,6 @@ body.dark-mode h3.text-body-emphasis {
   box-shadow: 0 8px 18px rgba(79, 70, 229, 0.18);
 }
 
-.dark-mode .portfolio-btn {
-  background: var(--button-primary);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
-}
-
-.dark-mode .portfolio-btn:hover,
-.dark-mode .portfolio-btn:focus-visible {
-  background: var(--button-primary-hover);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
-}
-
 .btn a {
   color: inherit;
   text-decoration: none;
@@ -384,10 +409,6 @@ body.dark-mode h3.text-body-emphasis {
 
 .courses-preview {
   padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 2);
-}
-
-.dark-mode .courses-preview {
-  background-color: var(--text-primary);
 }
 
 .courses-preview-content {
@@ -414,14 +435,6 @@ body.dark-mode h3.text-body-emphasis {
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
 }
 
-.dark-mode .courses-preview-content {
-  background:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.14), rgba(6, 182, 212, 0.1)),
-    var(--text-secondary);
-  border-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
-}
-
 .courses-preview-copy {
   display: flex;
   flex-direction: column;
@@ -443,11 +456,6 @@ body.dark-mode h3.text-body-emphasis {
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
-}
-
-.dark-mode .courses-preview-badge {
-  background-color: rgba(6, 182, 212, 0.14);
-  color: var(--accent);
 }
 
 .courses-preview-title {
@@ -487,6 +495,7 @@ body.dark-mode h3.text-body-emphasis {
   box-shadow:
     0 18px 38px rgba(37, 99, 235, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.24);
+    
 }
 
 .courses-preview-icon {
@@ -562,10 +571,6 @@ body.dark-mode h3.text-body-emphasis {
   padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 2);
 }
 
-.dark-mode .courses-page-main {
-  background-color: var(--text-primary);
-}
-
 .courses-list {
   max-width: 1520px;
   margin: 0 auto;
@@ -600,15 +605,6 @@ body.dark-mode h3.text-body-emphasis {
   transform: scale(1.015);
 }
 
-.dark-mode .course-card:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
-}
-
-.dark-mode .course-card {
-  background-color: var(--text-secondary);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
 .course-image {
   grid-area: image;
   width: 100%;
@@ -626,10 +622,6 @@ body.dark-mode h3.text-body-emphasis {
   background-color: rgba(248, 250, 252, 0.72);
   border-radius: var(--border-radius);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.dark-mode .course-image {
-  background-color: rgba(248, 250, 252, 0.08);
 }
 
 .course-content {
@@ -682,10 +674,6 @@ body.dark-mode h3.text-body-emphasis {
   background: var(--background-light);
   padding: calc(var(--spacing-unit) * 5) calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 12);
 
-}
-
-.dark-mode .low {
-  background: var(--text-primary);
 }
 
 .low-content {
@@ -897,8 +885,124 @@ body.dark-mode h3.text-body-emphasis {
   transform: translateY(-5px);
 }
 
+.dark-mode .fr,
+.dark-mode .courses-hero {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(124, 108, 255, 0.14), transparent 32%),
+    radial-gradient(circle at 50% 70%, rgba(6, 182, 212, 0.05), transparent 34%),
+    linear-gradient(180deg, #0d1017 0%, #0b0d12 100%);
+  box-shadow: none;
+}
+
+.dark-mode .H1,
+.dark-mode .courses-page-title {
+  color: var(--text);
+}
+
+.dark-mode .hero-subtitle,
+.dark-mode .courses-page-subtitle {
+  color: var(--text-muted);
+}
+
+.dark-mode .mid,
+.dark-mode .courses-preview,
+.dark-mode .courses-page-main,
+.dark-mode .low,
+.dark-mode .beforeLow {
+  background-color: var(--bg);
+}
+
+.dark-mode .sc-section,
+.dark-mode .feature,
+.dark-mode .courses-preview-content,
+.dark-mode .course-card,
 .dark-mode .cont22 {
-  background-color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.dark-mode .feature {
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: calc(var(--spacing-unit) * 3);
+}
+
+.dark-mode .courses-preview-content {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(124, 108, 255, 0.1), transparent 30%),
+    var(--bg-card);
+}
+
+.dark-mode .course-card:hover,
+.dark-mode .cont22:hover,
+.dark-mode .courses-preview-content:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(124, 108, 255, 0.22);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.34);
+}
+
+.dark-mode .feature-icon,
+.dark-mode .courses-preview-visual {
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.18), transparent 28%),
+    linear-gradient(135deg, rgba(124, 108, 255, 0.95), rgba(124, 108, 255, 0.64));
+  box-shadow:
+    0 14px 32px rgba(124, 108, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.dark-mode .courses-preview-badge {
+  background-color: rgba(124, 108, 255, 0.12);
+  color: var(--accent-hover);
+  border: 1px solid rgba(124, 108, 255, 0.18);
+}
+
+.dark-mode .course-image,
+.dark-mode .course-image2 {
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.dark-mode .portfolio-btn {
+  background: var(--accent);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--button-shadow);
+}
+
+.dark-mode .portfolio-btn:hover,
+.dark-mode .portfolio-btn:focus-visible {
+  background: var(--accent-hover);
+  box-shadow: var(--button-shadow-hover);
+}
+
+.dark-mode .portfolio-btn:focus-visible,
+.dark-mode .courses-home-link:focus-visible,
+.dark-mode .footer-nav-link:focus-visible,
+.dark-mode .social-link:focus-visible {
+  outline-color: rgba(124, 108, 255, 0.42);
+}
+
+.dark-mode .footer {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(124, 108, 255, 0.12), transparent 36%),
+    #0a0c11;
+  border-top: 1px solid var(--border);
+}
+
+.dark-mode .footer-divider {
+  background: var(--border);
+}
+
+.dark-mode .social-link {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.dark-mode .social-link:hover {
+  background: rgba(124, 108, 255, 0.14);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
 }
 #progress {
   font-weight: 200;
