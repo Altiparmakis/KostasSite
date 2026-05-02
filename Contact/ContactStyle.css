@@ -30,6 +30,9 @@ body {
   color: var(--text-primary);
   background-color: var(--background-light);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -90,6 +93,7 @@ body.dark-mode {
 .contact-content {
   background-color: var(--background-light);
   padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 2);
+  flex: 1 0 auto;
 }
 
 body.dark-mode .contact-content {
